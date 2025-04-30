@@ -333,21 +333,32 @@ p {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
-/* style.css */
 @keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.animate-slide {
-    animation: slide 30s linear infinite;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .logo-track {
+    overflow: hidden;
+  }
+  
+  .logo-strip {
+    width: max-content;
+  }
+  
+  .animate-slide {
+    animation: slide 10s linear infinite;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
     display: none;
-}
-.scrollbar-hide {
+  }
+  .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
+  }
+  
