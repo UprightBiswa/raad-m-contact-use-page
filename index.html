@@ -1,78 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" class="transition-colors duration-300 ease-in-out">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Freshworks Style Landing Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>Freshworks Style Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300 ease-in-out">
 
-  <!-- Navbar -->
-  <header class="flex justify-between items-center p-6 shadow-md">
-    <h1 class="text-xl font-bold text-green-600 dark:text-green-400">freshworks</h1>
-  </header>
+    <!-- Navbar -->
+    <header class="flex justify-between items-center p-6 shadow-md">
+        <h1 class="text-xl font-bold text-green-600 dark:text-green-400">freshworks</h1>
+    </header>
 
-  <!-- Main Section -->
-  <section class="flex flex-col lg:flex-row p-10 gap-10">
-    <!-- Left Content -->
-    <div class="lg:w-1/2">
-      <h2 class="text-4xl font-bold mb-4">A fresh approach to omnichannel for 2025</h2>
-      <p class="text-lg mb-6">Your guide to overcoming barriers to omnichannel success...</p>
-      <img src="assets/images/hero.webp" alt="hero" class="rounded-xl shadow-md">
-    </div>
-
-    <!-- Right Form -->
-    <div class="lg:w-1/2 bg-gray-100 dark:bg-gray-800 p-8 rounded-xl shadow-md">
-      <h3 class="text-xl font-semibold mb-4">Submit your details</h3>
-      <form id="contact-form" class="space-y-4">
-        <!-- First Name and Last Name -->
-        <div class="flex gap-4">
-          <div class="w-1/2">
-            <label for="first_name" class="text-sm">First name *</label>
-            <input type="text" name="first_name" id="first_name" placeholder="First name *"
-              class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
-          </div>
-          <div class="w-1/2">
-            <label for="last_name" class="text-sm">Last name *</label>
-            <input type="text" name="last_name" id="last_name" placeholder="Last name *"
-              class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>A fresh approach to omnichannel for 2025</h1>
+            <p>Your guide to overcoming barriers to omnichannel success with insights on creating a seamless customer
+                experience that truly transforms engagement.</p>
+            <div class="hero-image">
+                <img src="assets/images/hero.webp" alt="Customer service representative with headset">
+            </div>
         </div>
+        <div class="hero-form">
+            <h2>Download the report</h2>
+            <p>Discover case studies and insights from major brands to transform your omnichannel hurdles into
+                opportunities in 2025</p>
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="first_name" class="form-label">First name <span class="required">*</span></label>
+                        <input type="text" id="first_name" class="form-control"
+                            placeholder="Please enter your first name" required>
+                    </div>
+                    <div class="form-col">
+                        <label for="last_name" class="form-label">Last name <span class="required">*</span></label>
+                        <input type="text" id="last_name" class="form-control" placeholder="Please enter your last name"
+                            required>
+                    </div>
+                </div>
 
-        <!-- Email -->
-        <div>
-          <label for="email" class="text-sm">Business email *</label>
-          <input type="email" name="email" id="email" placeholder="Business email *"
-            class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
+                <div class="form-group">
+                    <label for="businessEmail" class="form-label">Business email <span class="required">*</span></label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your business email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company" class="form-label">Company name <span class="required">*</span></label>
+                    <input type="text" id="company" class="form-control" placeholder="Enter your company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-full">
+                    Download
+                </button>
+                <p style="text-align: center; font-size: 0.75rem; margin-top: 1rem;">
+                    By clicking Download, I accept the Freshworks <a href="#" style="color: #8e44ad;">Terms of
+                        Service</a> and <a href="#" style="color: #8e44ad;">Privacy Notice</a>.
+                </p>
+            </form>
         </div>
+    </section>
 
-        <!-- Company Name -->
-        <div>
-          <label for="company" class="text-sm">Company name *</label>
-          <input type="text" name="company" id="company" placeholder="Company name *"
-            class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" required>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-header">
+                <div class="stats-header-content">
+                    <h2>Transform CX in 2025: From fragmented systems to integrated solution</h2>
+                    <p>Discover how brands like Bank-Al-Etihad, Cambridge University Press & Assessment, Hobbycraft, and
+                        Jupiter Money thrive in a competitive, customer-focused market by embracing an omnichannel
+                        strategy.</p>
+                    <a href="#" class="btn">Download the report</a>
+                </div>
+                <div class="stats-header-image">
+                    <img src="assets/images/Switchback.webp" alt="Omnichannel approach tablet display">
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">16%</div>
+                    <p>of CX practitioners have fully implemented an omnichannel strategy</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">36%</div>
+                    <p>of organizations operate multichannel models with disconnected touchpoints</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">55%</div>
+                    <p>of practitioners prioritize enhancing user experiences across channels, yet few recognize
+                        omnichannel platforms as the solution</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">35%</div>
+                    <p>of respondents identified building a customer-first culture as one of their top CX challenges</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Phone Number -->
-        <div>
-          <label for="phone" class="text-sm">Phone</label>
-          <input type="tel" name="phone" id="phone" placeholder="Phone"
-            class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600">
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-container">
+                <div class="testimonial-content">
+                    <div class="quote-mark">"</div>
+                    <p style="font-size: 1.25rem;">Implementing an omnichannel approach can help these organizations
+                        accelerate their CX maturity by streamlining operations, reducing silos, and enhancing customer
+                        engagement across all touchpoints.</p>
+                    <div class="testimonial-author">
+                        <h3>Jennifer Petersen</h3>
+                        <p>Senior director of product management, Freshworks</p>
+                    </div>
+                    <a href="#" class="btn btn-link">
+                        Download the report
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="testimonial-image">
+                    <img src="https://www.freshworks.com/_next/image/?url=https%3A%2F%2Fdam.freshworks.com%2Fm%2F3460ca9ae1e3b2fc%2Foriginal%2FJennifer-Petersen.webp&w=828&q=75"
+                        alt="Jennifer Petersen">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Submit Button -->
-        <button type="submit"
-          class="bg-purple-600 hover:bg-purple-700 transition text-white px-6 py-2 rounded w-full">
-          Submit
-        </button>
-      </form>
-    </div>
-  </section>
+    <!-- Experts Section -->
+    <section class="experts">
+        <div class="container">
+            <h2>Recommended by leading industry experts</h2>
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script type="module" src="assets/js/script.js"></script>
+            <div class="experts-grid">
+                <div class="expert-item">
+                    <img src="assets/images/gartner.webp" alt="Gartner">
+                </div>
+                <div class="expert-item">
+                    <img src="assets/images/G2-Best-software-award-2023.webp" alt="Top 100 Software Products">
+                </div>
+                <div class="expert-item">
+                    <img src="assets/images/Forrester-Accolade-220x240.webp" alt="Forrester">
+                </div>
+                <div class="expert-item">
+                    <img src="assets/images/TopRated.webp" alt="Top Rated 2021">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Slider Section -->
+    <section class="logo-slider py-12 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-6">
+                Trusted by 72,000+ Businesses Worldwide
+            </p>
+
+            <div class="overflow-x-auto whitespace-nowrap scrollbar-hide flex items-center space-x-10 animate-slide">
+                <div class="logo-item flex-shrink-0">
+                    <img src="https://dam.freshworks.com/m/5d1f7afde8399166/original/Dunzo.webp" alt="Dunzo"
+                        class="h-12">
+                </div>
+                <div class="logo-item flex-shrink-0">
+                    <img src="https://dam.freshworks.com/m/36b3803a901454e5/original/Make-My-Trip.webp"
+                        alt="Make My Trip" class="h-12">
+                </div>
+                <div class="logo-item flex-shrink-0">
+                    <img src="https://dam.freshworks.com/m/2f5b999eb9f6e811/original/BlueNile_SideRail.webp"
+                        alt="Blue Nile" class="h-12">
+                </div>
+                <div class="logo-item flex-shrink-0">
+                    <img src="https://dam.freshworks.com/m/1e4245078bd1400c/original/Klarna-logo-dark.webp" alt="Klarna"
+                        class="h-12">
+                </div>
+                <div class="logo-item flex-shrink-0">
+                    <img src="https://dam.freshworks.com/m/25e49a5e0ba76d9f/original/harvey-norman-logo-100x50.webp"
+                        alt="Harvey Norman" class="h-12">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to take the next step?</h2>
+            <p class="cta-text">Discover the all-in-one omnichannel solution powered by AI</p>
+            <a href="#" class="btn" style="padding: 16px 32px; font-size: 1.125rem;">Get a demo</a>
+        </div>
+    </section>
+
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
+    <script>
+
+        // Responsive image loading
+        function loadResponsiveImages() {
+            const width = window.innerWidth;
+            const images = document.querySelectorAll('img[data-src]');
+
+            images.forEach(img => {
+                if (width < 768) {
+                    img.src = img.getAttribute('data-src-mobile');
+                } else {
+                    img.src = img.getAttribute('data-src');
+                }
+            });
+        }
+
+        // Call on page load and resize
+        window.addEventListener('load', loadResponsiveImages);
+        window.addEventListener('resize', loadResponsiveImages);
+    </script>
 </body>
+
 </html>

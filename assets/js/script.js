@@ -48,6 +48,7 @@ window.onload = function () {
         emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, form)
             .then(() => {
                 showDialog("Message sent successfully!");
+                alert('Thank you! Your download will begin shortly.');
                 form.reset();
                 // Automatically trigger PDF download
                 const link = document.createElement("a");
