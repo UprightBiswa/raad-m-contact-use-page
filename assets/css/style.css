@@ -22,6 +22,7 @@ body {
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    padding-top: 80px;
     color: #333;
 }
 
@@ -39,7 +40,7 @@ img {
 
 /* Typography */
 h1 {
-    font-size: 2.5rem;
+    font-size: 48px;
     font-weight: 700;
     color: #1a2e19;
     margin-bottom: 1.5rem;
@@ -59,8 +60,16 @@ h3 {
 }
 
 p {
+    font-size: 24px;
     margin-bottom: 1rem;
 }
+h1, h2, h3 {
+    line-height: 1.2;
+}
+p {
+    line-height: 1.6;
+}
+
 
 /* Buttons */
 .btn {
@@ -300,12 +309,21 @@ p {
 
     .stats-header {
         display: flex;
+        align-items: center; /* Vertically align text and image */
         gap: 2rem;
+        padding: 4rem 2rem; /* Optional: add padding around */
     }
 
     .stats-header-content,
     .stats-header-image {
         width: 50%;
+    }
+
+    .stats-header-image img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain; /* Maintain aspect ratio, helpful for transparent PNGs */
     }
 
     .stats-grid {
