@@ -49,6 +49,13 @@ window.onload = function () {
             .then(() => {
                 showDialog("Message sent successfully!");
                 form.reset();
+                // Automatically trigger PDF download
+                const link = document.createElement("a");
+                link.href = "/pdf/pdf.pdf";  // relative to `public/`
+                link.download = "pdf.pdf";   // desired filename
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             })
             .catch((error) => {
                 console.error("EmailJS error:", error);
