@@ -4,6 +4,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    padding-top: 80px;
+    color: #333;
 }
 
 html,
