@@ -51,7 +51,7 @@ window.onload = function () {
                 form.reset();
                 // Automatically trigger PDF download
                 const link = document.createElement("a");
-                link.href = "/pdf/pdf.pdf";  // relative to `public/`
+                link.href = "assets/pdf/pdf.pdf";  // relative to `public/`
                 link.download = "pdf.pdf";   // desired filename
                 document.body.appendChild(link);
                 link.click();
