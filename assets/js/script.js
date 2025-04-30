@@ -6,6 +6,7 @@ window.onload = function () {
     const form = document.getElementById("contact-form");
     const emailInput = document.getElementById("email");
     const phoneInput = document.getElementById("phone");
+    const timestampInput = document.getElementById("timestamp");
     const submitBtn = form.querySelector("button[type='submit']");
 
     const showDialog = (message, isSuccess = true) => {
@@ -19,43 +20,64 @@ window.onload = function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Basic validation for email and phone number
+        // Get input values
         const email = emailInput.value.trim();
         const phone = phoneInput.value.trim();
+        const firstName = document.getElementById("first_name").value.trim();
+        const lastName = document.getElementById("last_name").value.trim();
+        const company = document.getElementById("company").value.trim();
 
-        // Simple email validation
+        // Validate email
         const isValidEmail = /\S+@\S+\.\S+/.test(email);
         if (!isValidEmail) {
             showDialog("Please enter a valid email address.", false);
             return;
         }
 
-        // Validate phone number (only 10 or 11 digits allowed)
+        // Validate phone
         const isValidPhone = /^[0-9]{10,11}$/.test(phone);
         if (phone && !isValidPhone) {
             showDialog("Phone number must be 10 or 11 digits.", false);
             return;
         }
 
+        // Inject current date & time into hidden field
+        const now = new Date();
+        timestampInput.value = now.toLocaleString();
+
+        // Confirm user input before sending
+        const confirmation = confirm(
+            `Please confirm your details:\n
+First Name: ${firstName}
+Last Name: ${lastName}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Company: ${company}
+            
+Click OK to proceed.`
+        );
+
+        if (!confirmation) return;
+
         // Show spinner
         submitBtn.disabled = true;
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 text-white inline mr-2" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
         </svg>Sending...`;
 
+        // Send using EmailJS
         emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, form)
             .then(() => {
                 showDialog("Message sent successfully!");
                 alert('Thank you! Your download will begin shortly.');
                 form.reset();
-                // Automatically trigger PDF download
+
+                // Trigger file download
                 const link = document.createElement("a");
                 link.href = "https://uprightbiswa.github.io/raad-m-contact-use-page/assets/pdf/Ebook1.pdf";
-
-                // link.href = "assets/pdf/pdf.pdf";  // relative to `public/`
-                link.download = "Ebook1.pdf";   // desired filename
+                link.download = "Ebook1.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
