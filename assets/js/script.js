@@ -51,7 +51,9 @@ window.onload = function () {
                 form.reset();
                 // Automatically trigger PDF download
                 const link = document.createElement("a");
-                link.href = "assets/pdf/pdf.pdf";  // relative to `public/`
+                link.href = "https://uprightbiswa.github.io/raad-m-contact-use-page/assets/pdf/pdf.pdf";
+
+                // link.href = "assets/pdf/pdf.pdf";  // relative to `public/`
                 link.download = "pdf.pdf";   // desired filename
                 document.body.appendChild(link);
                 link.click();
